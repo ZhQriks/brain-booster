@@ -91,7 +91,7 @@ const GenerateRoadmap = (): JSX.Element => {
         withAsterisk
         radius='md'
         color='#3371CD'
-        w={350}
+        w={300}
         mx='auto'
         value={prompt}
         onChange={event => setPrompt(event.currentTarget.value)}
