@@ -14,10 +14,10 @@ import {
   TextInput,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
 import { useRegister } from 'query/auth';
 import { IMaskInput } from 'react-imask';
 import { useNavigate } from 'react-router-dom';
-import {notifications} from "@mantine/notifications";
 
 interface FormData {
   email: string;
@@ -55,7 +55,8 @@ const Register = (): JSX.Element => {
       onSuccess: () => {
         navigate('/login');
       },
-      onError: (error: any) => notifications.show({title: 'Failed to edit name', message: error.message, color: 'red'}),
+      onError: (error: any) =>
+        notifications.show({ title: 'Failed to load', message: error.message, color: 'red' }),
     });
   };
 

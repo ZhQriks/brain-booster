@@ -14,6 +14,7 @@ import {
   TextInput,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
 import image from 'assets/logo/eco_logo.png';
 import { useLogin } from 'query/auth';
 import { useNavigate } from 'react-router-dom';
@@ -38,6 +39,8 @@ const Login = (): JSX.Element => {
       onSuccess: () => {
         navigate('/');
       },
+      onError: (error: any) =>
+        notifications.show({ title: 'Failed to login', message: error.message, color: 'red' }),
     });
   };
 
