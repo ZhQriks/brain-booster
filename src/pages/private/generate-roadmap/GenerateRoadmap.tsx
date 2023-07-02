@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button, Container, Group, Stack, TextInput, useMantineTheme } from '@mantine/core';
+import { Button, Container, Group, Stack, TextInput, Title, useMantineTheme } from '@mantine/core';
 import Loading from 'pages/shared/Loading';
 import useCreateRoadmap from 'query/createRoadmap';
 
@@ -11,6 +11,18 @@ const GenerateRoadmap = (): JSX.Element => {
   const [prompt, setPrompt] = useState<string>('');
 
   const createRoadmap = useCreateRoadmap();
+
+  const [seconds, setSeconds] = useState(0);
+  const loadingTexts = [
+    'Starting',
+    'AI woke up',
+    'Analyzing questions',
+    'Connecting databases',
+    'Almost there',
+    'Loading Interface',
+    'Verifying data',
+    'Ready to start!',
+  ];
 
   useEffect(() => {
     let currentSentence = 0;
@@ -36,9 +48,9 @@ const GenerateRoadmap = (): JSX.Element => {
       return;
     }
 
-    const data: any = `{
+    const data: any = {
       title: prompt,
-    }`;
+    };
     createRoadmap.mutate(data, {
       onSuccess: (res: any) => {
         res.json().then((body: any) => {
@@ -49,8 +61,26 @@ const GenerateRoadmap = (): JSX.Element => {
     });
   };
 
+  useEffect(() => {
+    if (createRoadmap.isLoading) {
+      const interval = setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [createRoadmap.isLoading]);
+
+  const loadingText = loadingTexts[Math.floor(seconds / 3)] || 'Ready to start!';
+
   if (createRoadmap.isLoading) {
-    return <Loading />;
+    return (
+      <Stack>
+        <Loading />
+        <Title mt={100} order={2} align='center'>
+          {loadingText}
+        </Title>
+      </Stack>
+    );
   }
 
   return (

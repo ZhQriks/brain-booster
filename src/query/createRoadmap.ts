@@ -5,17 +5,17 @@ import { backendUrl } from 'utils/consts';
 export default function useCreateRoadmap(): UseMutationResult<any> {
   const queryClient = useQueryClient();
 
-  const createRoadmap = (topic: any): any => {
-    return baseFetch(`${backendUrl}/roadmaps/tests`, {
+  const createRoadmap = (data: any): any => {
+    return baseFetch(`${backendUrl}/roadmaps`, {
       method: 'POST',
-      body: JSON.stringify({ topic }),
+      body: JSON.stringify(data),
     });
   };
 
   return useMutation(createRoadmap, {
     onSuccess: () => {
       // @ts-ignore
-      queryClient.invalidateQueries('quizz');
+      queryClient.invalidateQueries('roadmaps');
     },
   });
 }
