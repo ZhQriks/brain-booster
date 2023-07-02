@@ -35,7 +35,6 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
   const theme = useMantineTheme();
   const { classes } = useStyles();
 
-
   const [opened, { close }] = useDisclosure(false);
   React.useEffect(() => {
     if (location.pathname === '/generate-roadmap') {

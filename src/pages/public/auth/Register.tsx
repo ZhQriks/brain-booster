@@ -17,6 +17,7 @@ import { useForm } from '@mantine/form';
 import { useRegister } from 'query/auth';
 import { IMaskInput } from 'react-imask';
 import { useNavigate } from 'react-router-dom';
+import {notifications} from "@mantine/notifications";
 
 interface FormData {
   email: string;
@@ -40,6 +41,12 @@ const Register = (): JSX.Element => {
     validate: {
       email: val => (/^\S+@\S+$/.test(val) ? null : 'Invalid email'),
       password: val => (val.length <= 6 ? 'Password should include at least 6 characters' : null),
+      username: value => {
+        if (value.length < 6) {
+          return 'Username must be longer than or equal to 6 characters';
+        }
+        return null;
+      },
     },
   });
 
@@ -48,6 +55,7 @@ const Register = (): JSX.Element => {
       onSuccess: () => {
         navigate('/login');
       },
+      onError: (error: any) => notifications.show({title: 'Failed to edit name', message: error.message, color: 'red'}),
     });
   };
 
