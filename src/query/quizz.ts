@@ -11,7 +11,7 @@ function useQuiz(topic?: string): UseQueryResult<any> {
     return res.json();
   };
 
-  return useQuery(['roadmapsSingle', topic], fetchQuiz, { enabled: !!topic });
+  return useQuery(['quizzSinglePost', topic], fetchQuiz, { enabled: !!topic });
 }
 
 export default useQuiz;
