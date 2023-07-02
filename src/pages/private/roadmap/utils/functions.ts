@@ -16,7 +16,7 @@ const generateNodesAndEdges = (data: any) => {
         isStep: true,
       },
       type: 'custom',
-      position: { x: index === 0 ? -48.5 : 0, y: index * 320 },
+      position: { x: index === 0 ? -48.5 : 0, y: index * 350 },
     });
 
     if (lastStepId) {
@@ -28,6 +28,7 @@ const generateNodesAndEdges = (data: any) => {
       });
     }
 
+    const topicWidth = 150;
     step.topics.forEach((topic: any, topicIndex: number) => {
       const topicId = `topic${index}-${topicIndex}`;
       nodes.push({
@@ -42,8 +43,10 @@ const generateNodesAndEdges = (data: any) => {
           isStep: false,
         },
         type: 'custom',
-        // position: { x: (topicIndex + 1) * -200, y: index * 200 + 80 },
-        position: { x: (topicIndex % 2 === 0 ? -1 : 1) * 150, y: index === 0 ? 200 : index * 400 + 80 },
+        position: {
+          x: (topicIndex * topicWidth - ((step.topics.length - 1) * topicWidth) / 2) * 1.7,
+          y: index === 0 ? 200 : index * 400 + 80,
+        },
       });
 
       edges.push({

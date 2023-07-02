@@ -2,7 +2,7 @@ import { useMutation, UseMutationResult, useQueryClient } from '@tanstack/react-
 import { baseFetch } from 'service/authApi';
 import { backendUrl } from 'utils/consts';
 
-export default function useCreateEvent(): UseMutationResult<any> {
+export default function useCreateRoadmap(): UseMutationResult<any> {
   const queryClient = useQueryClient();
 
   const createRoadmap = (data: any): any => {
@@ -11,6 +11,7 @@ export default function useCreateEvent(): UseMutationResult<any> {
       body: JSON.stringify(data),
     });
   };
+
 
   return useMutation(createRoadmap, {
     onSuccess: () => {

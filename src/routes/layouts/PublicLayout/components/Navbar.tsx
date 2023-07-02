@@ -14,7 +14,10 @@ import {
 } from '@mantine/core';
 import { useDebouncedValue, useDisclosure } from '@mantine/hooks';
 import { IconSquareToggle } from '@tabler/icons';
+import useRoadmap from 'query/roadmap';
 import { Link, useLocation } from 'react-router-dom';
+
+import useMultipleRoadmap from '../../../../query/roadmaps';
 
 const resizeAnimation = keyframes({
   'from, 0%, to': {
@@ -32,6 +35,21 @@ const resizeAnimation = keyframes({
 });
 
 const useStyles = createStyles(theme => ({
+  linkNew: {
+    display: 'flex',
+    alignItems: 'center',
+    textDecoration: 'none',
+    padding: 12,
+    marginBottom: 12,
+    borderRadius: theme.radius.md,
+    transition: 'all 200ms',
+    color: '#DEDEDE',
+    border: '1px solid #DEDEDE',
+
+    '&:hover': {
+      color: theme.colorScheme === 'dark' ? theme.white : '#9B9B9B',
+    },
+  },
   link: {
     display: 'flex',
     alignItems: 'center',
@@ -90,14 +108,16 @@ const Navbar = ({
   const { classes, cx } = useStyles();
   const theme = useMantineTheme();
   const { pathname } = useLocation();
+  const roadmaps = useMultipleRoadmap();
+
   const data = [
     {
-      link: '/roadmap',
-      label: 'Sample roadmap',
+      id: '/roadmap',
+      title: 'Sample roadmap',
     },
     {
-      link: '/roadmap/2',
-      label: 'Тема 2',
+      id: '/roadmap/2',
+      title: 'Тема 2',
     },
   ];
 
@@ -105,11 +125,38 @@ const Navbar = ({
   const openedOrNotWrapped = opened || !wrapped;
   const [showRouteLabelDebounced] = useDebouncedValue(openedOrNotWrapped, 300);
 
-  const links = data.map(({ link, label }) => (
+  const links = (roadmaps?.data ? roadmaps?.data : data).map(
+    ({ id, title }: { id: any; title: string }) => (
+      <Link
+        key={id}
+        to={`/roadmap/${id}`}
+        className={cx(classes.link, { [classes.linkActive]: id === pathname })}
+        onClick={() => {
+          if (opened) {
+            handleCloseHeader();
+          }
+        }}
+      >
+        <Group>
+          {openedOrNotWrapped && (
+            <Transition
+              mounted={showRouteLabelDebounced}
+              transition='fade'
+              duration={400}
+              timingFunction='ease'
+            >
+              {styles => <span style={{ ...styles }}>{title}</span>}
+            </Transition>
+          )}
+        </Group>
+      </Link>
+    ),
+  );
+
+  links.push(
     <Link
-      key={link}
-      to={link}
-      className={cx(classes.link, { [classes.linkActive]: link === pathname })}
+      to='/generate-roadmap'
+      className={cx(classes.linkNew)}
       onClick={() => {
         if (opened) {
           handleCloseHeader();
@@ -124,12 +171,12 @@ const Navbar = ({
             duration={400}
             timingFunction='ease'
           >
-            {styles => <span style={{ ...styles }}>{label}</span>}
+            {styles => <span style={{ ...styles }}>New</span>}
           </Transition>
         )}
       </Group>
-    </Link>
-  ));
+    </Link>,
+  );
 
   const width = wrapped ? 70 : 303;
 
@@ -207,7 +254,7 @@ const Navbar = ({
           }}
         >
           <MantineNavbar.Section grow component={ScrollArea} pr={12} mr={-12} mb={theme.spacing.sm}>
-            {links}
+            <>{links}</>
           </MantineNavbar.Section>
         </MediaQuery>
       </MantineNavbar>

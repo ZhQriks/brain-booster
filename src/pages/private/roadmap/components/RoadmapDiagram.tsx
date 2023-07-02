@@ -1,7 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 
 import { useDisclosure } from '@mantine/hooks';
-import data from 'pages/private/roadmap/data/data.json';
 import ReactFlow, { addEdge, Controls, MiniMap } from 'reactflow';
 
 import CustomNode from './CustomNode';
@@ -12,7 +11,7 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
-const RoadmapDiagram = (): JSX.Element => {
+const RoadmapDiagram = ({ data }: { data: any }): JSX.Element => {
   const { nodes: initNodes, edges: initEdges } = generateNodesAndEdges(data);
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -44,7 +43,7 @@ const RoadmapDiagram = (): JSX.Element => {
           edges={edges}
           onConnect={onConnect}
           onNodeClick={onNodeClick}
-          defaultViewport={{ x: 350, y: 100, zoom: 1.2 }}
+          defaultViewport={{ x: 350, y: 100, zoom: 1 }}
           nodeTypes={nodeTypes}
         >
           <MiniMap />

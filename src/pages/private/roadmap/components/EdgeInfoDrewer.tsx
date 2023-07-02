@@ -28,7 +28,10 @@ const EdgeInfoDrewer = ({
   close: () => void;
   edge: any;
 }): JSX.Element => {
-  console.log(edge);
+
+  React.useEffect(() => {
+    console.log(edge);
+  }, [])
   return (
     <Drawer
       opened={opened}
@@ -82,7 +85,7 @@ const EdgeInfoDrewer = ({
           </Text>
         )}
 
-        {edge?.resources.length > 0 && (
+        {edge?.resources && edge?.resources.length > 0 && (
           <>
             <Text color='white' fw={700}>
               Resource links:
@@ -91,7 +94,7 @@ const EdgeInfoDrewer = ({
               {edge?.resources.map((resource: any) => (
                 <List.Item key={resource.id}>
                   <Anchor href={resource.resourceLink} color='white'>
-                    {resource.resourceLink}
+                    {resource.resourceName}
                   </Anchor>
                 </List.Item>
               ))}

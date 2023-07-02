@@ -8,7 +8,6 @@ import { EdgeStatus } from './EdgeInfoDrewer';
 function CustomNode({ data }: { data: any }) {
   const statusData = data.status;
   const { isStep } = data;
-  console.log(data.isStep);
 
   let status;
   let dotColor = '#E2B53E';

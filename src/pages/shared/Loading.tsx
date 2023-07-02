@@ -5,19 +5,19 @@ import { ProgressSpinner } from 'primereact/progressspinner';
 const Loading = (): JSX.Element => {
   return (
     <div
-      className='flex align-items-center justify-content-center'
-      // sx={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   flexDirection: 'column',
-      //   alignItems: 'center',
-      //   justifyContent: 'center',
-      // }}
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transform: 'translate(-50%, -50%)',
+      }}
     >
-      <ProgressSpinner />
-      {/* <Center data-testid='loading'> */}
-      {/*  <Loader size='xl' variant='bars' /> */}
-      {/* </Center> */}
+      <div className='flex align-items-center justify-content-center'>
+        <ProgressSpinner />
+      </div>
     </div>
   );
 };

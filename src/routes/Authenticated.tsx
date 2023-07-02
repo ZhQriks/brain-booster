@@ -6,6 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import PublicLayout from 'routes/layouts/PublicLayout';
 
 import GenerateRoadmap from '../pages/private/generate-roadmap/GenerateRoadmap';
+import RoadMapDetails from "../pages/private/roadmap-details/RoadMapDetails";
 
 interface IRouteMap {
   [route: string]: JSX.Element;
@@ -15,6 +16,7 @@ export const authenticatedRoutes: IRouteMap = {
   '/': <Home />,
   '/roadmap': <Roadmap />,
   '/generate-roadmap': <GenerateRoadmap />,
+   '/roadmap/:roadmapId': <RoadMapDetails />,
   '/login': <Navigate to='/' />,
 };
 
