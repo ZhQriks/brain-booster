@@ -14,9 +14,8 @@ interface IRouteMap {
 
 export const authenticatedRoutes: IRouteMap = {
   '/': <Home />,
-  '/roadmap': <Roadmap />,
   '/generate-roadmap': <GenerateRoadmap />,
-   '/roadmap/:roadmapId': <RoadMapDetails />,
+  '/roadmap/:roadmapId': <RoadMapDetails />,
   '/login': <Navigate to='/' />,
 };
 

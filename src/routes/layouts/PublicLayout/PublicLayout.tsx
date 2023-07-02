@@ -53,11 +53,11 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
                 </Title>
 
                 <Group>
-                  <Anchor href='/roadmap' color='white'>
-                    Roadmap
-                  </Anchor>
                   <Anchor href='/generate-roadmap' color='white'>
-                    Generate
+                    Generate New
+                  </Anchor>
+                  <Anchor href='/roadmap/1' color='white'>
+                    Roadmaps
                   </Anchor>
                 </Group>
               </Group>
