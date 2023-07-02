@@ -12,10 +12,6 @@ const RoadMapDetails = (): JSX.Element => {
   const mantineTheme = useMantineTheme();
   const roadmap = useSingleRoadmap(+roadmapId! || 0);
 
-  React.useEffect(() => {
-    console.log(roadmap?.data);
-  }, [roadmap]);
-
   return (
     <Stack mt='lg' spacing={50}>
       {roadmap?.data && <RoadmapDiagram key={roadmapId} data={roadmap?.data} />}

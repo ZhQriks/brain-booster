@@ -12,6 +12,7 @@ const nodeTypes = {
 };
 
 const RoadmapDiagram = ({ data }: { data: any }): JSX.Element => {
+
   const { nodes: initNodes, edges: initEdges } = generateNodesAndEdges(data);
   const [opened, { open, close }] = useDisclosure(false);
 

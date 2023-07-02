@@ -36,9 +36,9 @@ const GenerateRoadmap = (): JSX.Element => {
       return;
     }
 
-    const data: any = {
+    const data: any = `{
       title: prompt,
-    };
+    }`;
     createRoadmap.mutate(data, {
       onSuccess: (res: any) => {
         res.json().then((body: any) => {
