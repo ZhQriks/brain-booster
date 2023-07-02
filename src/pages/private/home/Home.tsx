@@ -14,7 +14,7 @@ const Home = (): JSX.Element => {
         Learn any <br className='hidden md:block' /> of{' '}
         <a className='underline decoration-[#5C9DFE] decoration-6'>2,000,000+</a> skills
       </p>
-      <p className='color-[#7D7D7D] font-light text-center px-60 -mt-10'>
+      <p className='color-[#7D7D7D] font-light text-center px-12 md:px-40 lg:px-60 -mt-10'>
         We help you develop a detailed and structured plan that will help to systematically master
         the topic being studied without missing anything important.
       </p>

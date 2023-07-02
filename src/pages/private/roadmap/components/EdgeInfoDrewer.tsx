@@ -53,7 +53,6 @@ const EdgeInfoDrewer = ({
 
   React.useEffect(() => {
     setStatus(edge.status);
-
   }, []);
   return (
     <>

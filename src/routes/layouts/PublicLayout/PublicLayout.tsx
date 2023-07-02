@@ -14,11 +14,10 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import GenerationPhoto from 'assets/images/generation.png';
 import useCurrentRoute from 'hooks/useCurrentRoute';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import MobileNavbar from './components/MobileNavbar';
 import Navbar from './components/Navbar';
-import useCreateRoadmap from '../../../query/createRoadmap';
 
 const useStyles = createStyles(theme => ({
   content: {
@@ -36,6 +35,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
   const theme = useMantineTheme();
   const { classes } = useStyles();
 
+
   const [opened, { close }] = useDisclosure(false);
   React.useEffect(() => {
     if (location.pathname === '/generate-roadmap') {
@@ -51,13 +51,15 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
           !currentRoute.startsWith('/roadmap') ? (
             <Header height={60} p='xs' bg='#175BC1' sx={{ border: 'none' }}>
               <Group position='apart' px={20}>
-                <Title color='white' order={2}>
-                  Brain Booster
-                </Title>
+                <Link to='/'>
+                  <Title color='white' order={2}>
+                    Brain Booster
+                  </Title>
+                </Link>
 
                 <Group>
                   <Anchor href='/generate-roadmap' color='white'>
-                    Generate New
+                    Generate
                   </Anchor>
                   <Anchor href='/roadmap/1' color='white'>
                     Roadmaps

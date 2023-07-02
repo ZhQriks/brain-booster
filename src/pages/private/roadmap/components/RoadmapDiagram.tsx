@@ -50,7 +50,9 @@ const RoadmapDiagram = ({ data }: { data: any }): JSX.Element => {
           <Controls />
         </ReactFlow>
       </div>
-      {nodeEdge && <EdgeInfoDrewer data={data} opened={opened} close={close} edge={nodeEdge?.data} />}
+      {nodeEdge && (
+        <EdgeInfoDrewer data={data} opened={opened} close={close} edge={nodeEdge?.data} />
+      )}
     </>
   );
 };
