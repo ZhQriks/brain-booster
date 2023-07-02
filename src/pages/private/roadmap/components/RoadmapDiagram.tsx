@@ -38,7 +38,7 @@ const RoadmapDiagram = ({ data }: { data: any }): JSX.Element => {
 
   return (
     <>
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <div style={{ width: '100vw', height: '95vh' }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}

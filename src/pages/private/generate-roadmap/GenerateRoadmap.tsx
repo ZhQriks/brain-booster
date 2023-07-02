@@ -89,12 +89,13 @@ const GenerateRoadmap = (): JSX.Element => {
         size='lg'
         placeholder={placeholder}
         withAsterisk
-        miw={500}
         radius='md'
         color='#3371CD'
+        w={350}
         mx='auto'
         value={prompt}
         onChange={event => setPrompt(event.currentTarget.value)}
+        display='block'
       />
       <Button miw={280} mx='auto' size='lg' variant='light' radius='lg' onClick={handleSubmit}>
         Continue
