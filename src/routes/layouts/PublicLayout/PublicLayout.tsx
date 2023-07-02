@@ -18,6 +18,7 @@ import { useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import useCreateRoadmap from "../../../query/createRoadmap";
+import MobileNavbar from "./components/MobileNavbar";
 
 const useStyles = createStyles(theme => ({
   content: {
@@ -64,6 +65,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
             </Header>
           ) : undefined
         }
+        footer={<MobileNavbar />}
         padding={0}
         navbar={
           currentRoute.startsWith('/roadmap') ? (
