@@ -12,7 +12,6 @@ const nodeTypes = {
 };
 
 const RoadmapDiagram = ({ data }: { data: any }): JSX.Element => {
-
   const { nodes: initNodes, edges: initEdges } = generateNodesAndEdges(data);
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -51,7 +50,7 @@ const RoadmapDiagram = ({ data }: { data: any }): JSX.Element => {
           <Controls />
         </ReactFlow>
       </div>
-      {nodeEdge && <EdgeInfoDrewer opened={opened} close={close} edge={nodeEdge?.data} />}
+      {nodeEdge && <EdgeInfoDrewer data={data} opened={opened} close={close} edge={nodeEdge?.data} />}
     </>
   );
 };

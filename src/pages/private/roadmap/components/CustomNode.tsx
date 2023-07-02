@@ -38,7 +38,9 @@ function CustomNode({ data }: { data: any }) {
         <div className='ml-2'>
           <div className='text-md font-bold'>{data.name}</div>
           <div className='flex items-center'>
-            <Title order={1} color={dotColor} className='mr-1'>·</Title>
+            <Title order={1} color={dotColor} className='mr-1'>
+              ·
+            </Title>
             <div className='text-xs'>{status}</div>
           </div>
         </div>

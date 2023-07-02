@@ -45,9 +45,6 @@ const QuizModal = ({
         correctCount++;
       }
     });
-    console.log(
-      `You have answered correctly ${correctCount} out of ${quiz.data.tests.length} questions`,
-    );
     setAnswersCorrect(correctCount);
     setIsSubmitted(true);
   };

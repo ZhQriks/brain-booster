@@ -1,80 +1,80 @@
 {
-    "title": "DevOps",
-    "description:": "DevOps, short for Development and Operations, is an approach to software development that emphasizes collaboration, communication, and integration between software developers and IT operations teams. It aims to automate and streamline the processes involved in software delivery, infrastructure management, and application deployment.",
-    "steps": [
+  "title": "DevOps",
+  "description:": "DevOps, short for Development and Operations, is an approach to software development that emphasizes collaboration, communication, and integration between software developers and IT operations teams. It aims to automate and streamline the processes involved in software delivery, infrastructure management, and application deployment.",
+  "steps": [
+    {
+      "stepTitle": "Learn a programming language",
+      "stepDescription": "It doesn’t matter what language you pick, but it is important to learn at least one. You will be able to use that language to write automation scripts.",
+      "stepStatus": 1,
+      "topics": [
         {
-            "stepTitle": "Learn a programming language",
-            "stepDescription": "It doesn’t matter what language you pick, but it is important to learn at least one. You will be able to use that language to write automation scripts.",
-            "stepStatus": 1,
-            "topics": [
-                {
-                    "topicName": "Python",
-                    "topicDescription": "Python is a multi-paradigm language. Being an interpreted language, code is executed as soon as it is written and the Python syntax allows for writing code in functional, procedural or object-oriented programmatic ways. Python is frequently recommended as the first language new coders should learn, because of its focus on readability, consistency, and ease of use. This comes with some downsides, as the language is not especially performant in most production tasks.",
-                    "topicStatus": 1,
-                    "topicResources": [
-                        {
-                            "resourceName": "Visit Dedicated Python Roadmap",
-                            "resourceLink": "https://roadmap.sh/python"
-                        },
-                        {
-                            "resourceName": "Python getting started",
-                            "resourceLink": "https://www.python.org/about/gettingstarted/"
-                        }
-                    ]
-                },
-                {
-                    "topicName": "Javascript/Node.js",
-                    "topicDescription": "JavaScript allows you to add interactivity to your pages. Common examples that you may have seen on the websites are sliders, click interactions, popups and so on. Apart from being used on the frontend in browsers, there is Node.js which is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
-                    "topicStatus": 1,
-                    "topicResources": [
-                        {
-                            "resourceName": "Visit Dedicated Javascript Roadmap",
-                            "resourceLink": "https://roadmap.sh/javascript"
-                        },
-                        {
-                            "resourceName": "The Modern JavaScript Tutorial",
-                            "resourceLink": "https://javascript.info/"
-                        }
-                    ]
-                }
-            ]
+          "topicName": "Python",
+          "topicDescription": "Python is a multi-paradigm language. Being an interpreted language, code is executed as soon as it is written and the Python syntax allows for writing code in functional, procedural or object-oriented programmatic ways. Python is frequently recommended as the first language new coders should learn, because of its focus on readability, consistency, and ease of use. This comes with some downsides, as the language is not especially performant in most production tasks.",
+          "topicStatus": 1,
+          "topicResources": [
+            {
+              "resourceName": "Visit Dedicated Python Roadmap",
+              "resourceLink": "https://roadmap.sh/python"
+            },
+            {
+              "resourceName": "Python getting started",
+              "resourceLink": "https://www.python.org/about/gettingstarted/"
+            }
+          ]
         },
         {
-            "stepTitle": "Operating systems",
-            "stepDescription": "An Operating system serves as a bridge between a computer’s user and its hardware. An operating system’s function is to offer a setting in which a user can conveniently and effectively run programmes. In simple terms we can say that and Operating System (OS) is an interface between a computer user and computer hardware. An OS permits software programmes to communicate with a computer’s hardware, The kernel is the name of Piece of software that houses the fundamental elements of Operating System.",
-            "stepStatus": 1,
-            "topics": [
-                {
-                    "topicName": "Ubuntu/Debian",
-                    "topicDescription": "Debian is a free and open-source Linux distribution developed by the Debian Project, an all volunteer software community organization. Debian is the upstream distribution of Ubuntu.",
-                    "topicStatus": 1,
-                    "resources": [
-                        {
-                            "resourceName": "Ubuntu Website",
-                            "resourceLink": "https://ubuntu.com/"
-                        },
-                        {
-                            "resourceName": "Linux Operating System - Crash Course for beginners",
-                            "resourceLink": "https://www.youtube.com/watch?v=ROjZy1WbCIA"
-                        }
-                    ]
-                },
-                {
-                    "topicName": "Windows",
-                    "topicDescription": "Windows is a graphical user interface (GUI) based operating system developed by Microsoft. It is a hybrid kernel-based proprietary operating system. According to a survey, till April 2022, windows is the most popular operating system in the world with a 75% market share.",
-                    "topicStatus": 1,
-                    "resources": [
-                        {
-                            "resourceName": "Windows Official Site",
-                            "resourceLink": "http://microsoft.com/windows"
-                        },
-                        {
-                            "resourceName": "Windows Documentation for Developers",
-                            "resourceLink": "https://learn.microsoft.com/en-us/windows/"
-                        }
-                    ]
-                }
-            ]
+          "topicName": "Javascript/Node.js",
+          "topicDescription": "JavaScript allows you to add interactivity to your pages. Common examples that you may have seen on the websites are sliders, click interactions, popups and so on. Apart from being used on the frontend in browsers, there is Node.js which is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+          "topicStatus": 1,
+          "topicResources": [
+            {
+              "resourceName": "Visit Dedicated Javascript Roadmap",
+              "resourceLink": "https://roadmap.sh/javascript"
+            },
+            {
+              "resourceName": "The Modern JavaScript Tutorial",
+              "resourceLink": "https://javascript.info/"
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "stepTitle": "Operating systems",
+      "stepDescription": "An Operating system serves as a bridge between a computer’s user and its hardware. An operating system’s function is to offer a setting in which a user can conveniently and effectively run programmes. In simple terms we can say that and Operating System (OS) is an interface between a computer user and computer hardware. An OS permits software programmes to communicate with a computer’s hardware, The kernel is the name of Piece of software that houses the fundamental elements of Operating System.",
+      "stepStatus": 1,
+      "topics": [
+        {
+          "topicName": "Ubuntu/Debian",
+          "topicDescription": "Debian is a free and open-source Linux distribution developed by the Debian Project, an all volunteer software community organization. Debian is the upstream distribution of Ubuntu.",
+          "topicStatus": 1,
+          "resources": [
+            {
+              "resourceName": "Ubuntu Website",
+              "resourceLink": "https://ubuntu.com/"
+            },
+            {
+              "resourceName": "Linux Operating System - Crash Course for beginners",
+              "resourceLink": "https://www.youtube.com/watch?v=ROjZy1WbCIA"
+            }
+          ]
+        },
+        {
+          "topicName": "Windows",
+          "topicDescription": "Windows is a graphical user interface (GUI) based operating system developed by Microsoft. It is a hybrid kernel-based proprietary operating system. According to a survey, till April 2022, windows is the most popular operating system in the world with a 75% market share.",
+          "topicStatus": 1,
+          "resources": [
+            {
+              "resourceName": "Windows Official Site",
+              "resourceLink": "http://microsoft.com/windows"
+            },
+            {
+              "resourceName": "Windows Documentation for Developers",
+              "resourceLink": "https://learn.microsoft.com/en-us/windows/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

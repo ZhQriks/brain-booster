@@ -34,6 +34,7 @@
     "primereact": "^8.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.0",
     "react-imask": "^7.0.1",
     "react-intersection-observer": "^9.4.3",
     "react-markdown": "^8.0.6",

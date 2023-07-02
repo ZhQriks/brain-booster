@@ -41,6 +41,8 @@ const generateNodesAndEdges = (data: any) => {
           step: topicIndex + 1,
           status: topic.topicStatus,
           isStep: false,
+          topicIndex,
+          stepIndex: index,
         },
         type: 'custom',
         position: {

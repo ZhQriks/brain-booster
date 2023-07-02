@@ -41,7 +41,13 @@ const MobileNavbar = (): JSX.Element => {
   return (
     <>
       <MediaQuery largerThan='md' styles={{ display: 'none' }}>
-        <MantineFooter zIndex={1000} py='sm' px='xl' height='auto' sx={{ position: 'fixed', bottom: 0, width: '100%' }}>
+        <MantineFooter
+          zIndex={1000}
+          py='sm'
+          px='xl'
+          height='auto'
+          sx={{ position: 'fixed', bottom: 0, width: '100%' }}
+        >
           <Center>
             <Group position='apart' maw={500} w='100%'>
               <Burger opened={opened} onClick={toggle} size='sm' color='#1B3966' />

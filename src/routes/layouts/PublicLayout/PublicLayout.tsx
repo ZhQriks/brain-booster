@@ -16,9 +16,9 @@ import GenerationPhoto from 'assets/images/generation.png';
 import useCurrentRoute from 'hooks/useCurrentRoute';
 import { useLocation } from 'react-router-dom';
 
+import MobileNavbar from './components/MobileNavbar';
 import Navbar from './components/Navbar';
-import useCreateRoadmap from "../../../query/createRoadmap";
-import MobileNavbar from "./components/MobileNavbar";
+import useCreateRoadmap from '../../../query/createRoadmap';
 
 const useStyles = createStyles(theme => ({
   content: {
@@ -40,6 +40,8 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
   React.useEffect(() => {
     if (location.pathname === '/generate-roadmap') {
       setIsBackgroundGenerate(true);
+    } else {
+      setIsBackgroundGenerate(false);
     }
   }, [location]);
   return (
@@ -89,7 +91,11 @@ const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element 
         <div
           className={classes.content}
           style={{
-            backgroundImage: isBackgroundGenerate ? `url(${GenerationPhoto})` : '',
+            backgroundImage: isBackgroundGenerate
+              ? `url(${GenerationPhoto})`
+              : location.pathname === '/'
+              ? 'url(https://i.postimg.cc/QdHdxMTT/Mac-Book-Air-10.png)'
+              : '',
           }}
         >
           <Container py={20}>{children}</Container>

@@ -1,8 +1,8 @@
 import React from 'react';
 
+import Home from 'pages/private/home/Home';
 import Login from 'pages/public/auth/Login';
 import Register from 'pages/public/auth/Register';
-import Home from 'pages/private/home/Home';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import PublicLayout from 'routes/layouts/PublicLayout';
 

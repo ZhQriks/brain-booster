@@ -16,7 +16,6 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 
 import QuizModal from './QuizModal';
-import useQuiz from '../../../../query/quizz';
 
 export const EdgeStatus = {
   notStarted: 1,
@@ -28,12 +27,34 @@ const EdgeInfoDrewer = ({
   opened,
   close,
   edge,
+  data,
 }: {
   opened: boolean;
   close: () => void;
   edge: any;
+  data: any;
 }): JSX.Element => {
+  // function changeTopicStatus(
+  //   stepIndex: number,
+  //   topicIndex: number,
+  //   changedStatus: any,
+  //   obj: any,
+  // ): any {
+  //   if (obj.steps[stepIndex] && obj.steps[stepIndex].topics[topicIndex]) {
+  //     obj.steps[stepIndex].topics[topicIndex].status = changedStatus;
+  //   } else {
+  //     return;
+  //   }
+  //   return obj;
+  // }
+
   const [openedModal, { open: openModal, close: closeModal }] = useDisclosure(false);
+  const [status, setStatus] = React.useState(EdgeStatus.notStarted);
+
+  React.useEffect(() => {
+    setStatus(edge.status);
+
+  }, []);
   return (
     <>
       <Drawer
@@ -61,13 +82,23 @@ const EdgeInfoDrewer = ({
             <Select
               placeholder='Pick one'
               size='xs'
-              // use EdgeStatus enum here
+              value={status.toString()}
+              onChange={value => {
+                if (!value) return;
+                setStatus(+value);
+                // const updatedData = changeTopicStatus(
+                //   data.stepIndex,
+                //   data.topicIndex,
+                //   value,
+                //   data.data,
+                // );
+                // console.log(updatedData);
+              }}
               data={[
                 { value: EdgeStatus.notStarted.toString(), label: 'Not Started' },
                 { value: EdgeStatus.inProgress.toString(), label: 'In Progress' },
                 { value: EdgeStatus.completed.toString(), label: 'Completed' },
               ]}
-              defaultValue={EdgeStatus.notStarted.toString()}
               styles={{
                 input: {
                   background: '#5A8AD1',
@@ -106,9 +137,6 @@ const EdgeInfoDrewer = ({
           )}
           <Button size='lg' radius='md' variant='light' onClick={openModal}>
             Take a Quiz
-          </Button>
-          <Button size='lg' radius='md'>
-            Next Topic
           </Button>
         </Stack>
       </Drawer>
